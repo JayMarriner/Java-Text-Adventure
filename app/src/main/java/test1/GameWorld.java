@@ -65,31 +65,41 @@ public class GameWorld {
     }
 
     public void ChangeLocation(Player player) throws IOException{
+        //Lists all cities.
         for(int x = 0; x < cityNames.length; x++){
             System.out.println(x + ": " + cityNames[x]);
         }
 
+        //Allow user to select a city.
         System.out.println(GameLoop.Spacer());
         String cityInput = reader.readLine();
         System.out.println(GameLoop.Spacer());
+
+        //Convert user input to an integer.
         int selected1 = Integer.parseInt(cityInput);
 
-        City selectedCity;
-
+        //Set array for the places within chosen city.
         Places[] displayPlaces = allPlaces[selected1];
 
+        //Display available locations within city chosen.
         for(int x = 0; x < displayPlaces.length; x++){
             System.out.println(x + ": " + displayPlaces[x].placeName);
         }
-        selectedCity = cities.get(selected1);
+        //Set chosen city.
+        City selectedCity = cities.get(selected1);
 
+        //Allow for user input for place selection.
         System.out.println(GameLoop.Spacer());
         String placeInput = reader.readLine();
         System.out.println(GameLoop.Spacer());
 
+        //Convert input to integer.
         int selected2 = Integer.parseInt(placeInput);
+
+        //Set selected place.
         Places selectedPlace = selectedCity.cityPlaces.get(selected2);
 
+        //Run move method on the main player passed through to this method.
         player.MovePlayer(selectedCity, selectedPlace);
     }
 }
