@@ -1,4 +1,4 @@
-package test1;
+package test1.Player;
 
 public class PlayerInventory {
     private String[] names = new String[10];

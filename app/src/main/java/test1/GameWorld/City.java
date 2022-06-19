@@ -1,9 +1,11 @@
-package test1;
+package test1.GameWorld;
 import java.util.ArrayList;
 import java.util.List;
 
 public class City {
     String name;
+    public String getName() { return name; }
+
     List<Places> cityPlaces = new ArrayList();
     //Getter for cityPlaces
     public List<Places> getCityPlaces(){ return cityPlaces;}

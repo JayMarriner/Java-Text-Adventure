@@ -1,9 +1,13 @@
-package test1;
+package test1.GameWorld;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import test1.GameLoop;
+import test1.GameWorld.Places.PlaceType;
+import test1.Player.Player;
 
 public class GameWorld {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -75,8 +79,24 @@ public class GameWorld {
         String cityInput = reader.readLine();
         System.out.println(GameLoop.Spacer());
 
+        try{
+            int x = Integer.parseInt(cityInput); 
+          }
+          catch(NumberFormatException e){
+            System.out.println("Please enter a number...");
+            ChangeLocation(player);
+            return; 
+          } 
+
         //Convert user input to an integer.
         int selected1 = Integer.parseInt(cityInput);
+
+        //Check input is allowed.
+        if(selected1 > allPlaces.length){
+            System.out.println("Please enter a valid number...");
+            ChangeLocation(player);
+            return;
+        }
 
         //Set array for the places within chosen city.
         Places[] displayPlaces = allPlaces[selected1];
@@ -93,8 +113,25 @@ public class GameWorld {
         String placeInput = reader.readLine();
         System.out.println(GameLoop.Spacer());
 
+        try{
+            int x = Integer.parseInt(placeInput); 
+          }
+          catch(NumberFormatException e){
+            System.out.println("Please enter a number...");
+            ChangeLocation(player);
+            return; 
+          } 
+
+
         //Convert input to integer.
         int selected2 = Integer.parseInt(placeInput);
+
+        //Check input is allowed.
+        if(selected2 + 1 > selectedCity.cityPlaces.size()){
+            System.out.println("Please enter a valid number...");
+            ChangeLocation(player);
+            return;
+        }
 
         //Set selected place.
         Places selectedPlace = selectedCity.cityPlaces.get(selected2);

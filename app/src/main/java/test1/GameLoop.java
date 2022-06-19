@@ -3,6 +3,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import test1.GameWorld.GameWorld;
+import test1.Player.Player;
+
 public class GameLoop {
 
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -83,7 +86,12 @@ public class GameLoop {
                 mainWorld.ChangeLocation(mainPlayer);
                 break;
             case "2":
-                System.out.println("Look around command.");
+                if(mainPlayer.getCurrentPlace() == null){
+                    System.out.println("There's nothing around! Choose a location with option 1 first...");
+                }
+                else{
+                    mainPlayer.getCurrentPlace().Interact();
+                }
                 break;
             //Inventory
             case "3":

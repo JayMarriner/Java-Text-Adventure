@@ -1,0 +1,76 @@
+{
+    "Armour": [
+       {
+          "id":0,
+          "price":100,
+          "name":"Bronze Helmet",
+          "isTrade":true,
+          "defenceAmt":5,
+          "isDeg":false,
+          "type":"Helmet"
+       },
+       {
+        "id":1,
+        "price":200,
+        "name":"Bronze ChestPlate",
+        "isTrade":true,
+        "defenceAmt":15,
+        "isDeg":false,
+        "type":"ChestPlate"
+       },
+       {
+        "id":2,
+        "price":150,
+        "name":"Bronze PlateLegs",
+        "isTrade":true,
+        "defenceAmt":10,
+        "isDeg":false,
+        "type":"PlateLegs"
+       }
+    ],
+
+    "Weapon": [
+        {
+           "id":3,
+           "price":50,
+           "name":"Bronze Dagger",
+           "isTrade":true,
+           "damageAmt":5,
+           "isDeplete":false
+        },
+        {
+            "id":4,
+            "price":100,
+            "name":"Bronze Sword",
+            "isTrade":true,
+            "damageAmt":15,
+            "isDeplete":false
+         },
+         {
+            "id":5,
+            "price":2500,
+            "name":"Seth Roth's Katana",
+            "isTrade":true,
+            "damageAmt":50,
+            "isDeplete":true,
+            "degRate":1
+         }
+     ],
+
+     "Heal": [
+        {
+            "id":6,
+            "price":5,
+            "name":"Cod Fish",
+            "isTrade":true,
+            "healAmt":2
+        },
+        {
+            "id":7,
+            "price":10,
+            "name":"Haddock Fish",
+            "isTrade":true,
+            "healAmt":3
+        }
+     ]
+ }

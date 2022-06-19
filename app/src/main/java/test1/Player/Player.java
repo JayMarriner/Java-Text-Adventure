@@ -1,7 +1,12 @@
-package test1;
+package test1.Player;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
+
+import test1.GameLoop;
+import test1.GameState;
+import test1.GameWorld.City;
+import test1.GameWorld.Places;
 
 public class Player {
     //Skills + stats
@@ -14,9 +19,9 @@ public class Player {
     public PlayerInventory getInventory() { return inventory; }
 
     //Location
-    Places currentPlace;
+    private Places currentPlace;
     public Places getCurrentPlace() { return currentPlace; }
-    City currentCity;
+    private City currentCity;
     public City getCurrentCity() { return currentCity; }
 
     public Player(int hp, int attk, int def){
@@ -61,7 +66,7 @@ public class Player {
         this.currentCity = newCity;
         this.currentPlace = newPlace;
 
-        System.out.println("New city: " + currentCity.name + ", New place: " + currentPlace.placeName);
+        System.out.println("New city: " + currentCity.getName() + ", New place: " + currentPlace.getPlaceName());
     }
 
     public String ViewStats(){
