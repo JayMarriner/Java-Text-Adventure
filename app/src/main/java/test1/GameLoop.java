@@ -89,6 +89,9 @@ public class GameLoop {
             case "3":
                 System.out.println(mainPlayer.getInventory().DisplayInventory());
                 break;
+            case "5":
+                System.out.println(mainPlayer.ViewStats());
+                break;
             //Wrong inputs
             default:
                 System.out.println("Incorrect input!");

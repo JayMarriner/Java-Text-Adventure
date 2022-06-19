@@ -6,8 +6,8 @@ import java.lang.reflect.Array;
 public class Player {
     //Skills + stats
     private float hitPoints;
-    private int attackStat;
-    private int defenceStat;
+    private int[] skills = {0,0,0,0,0,0};
+    private String[] skillNames = {"Attack", "Defence", "Mining", "Smithing", "Fishing", "Cooking"};
 
     //Inventory
     private PlayerInventory inventory;
@@ -21,9 +21,10 @@ public class Player {
 
     public Player(int hp, int attk, int def){
         //Set basic stats
-        hitPoints = hp*10;
-        attackStat = attk;
-        defenceStat = def;
+        hitPoints = (hp+1)*10;
+        skills[0] = attk+1;
+        skills[1] = def+1;
+        skills[2] = skills[3] = skills[4] = skills[5] = 1;
 
         //Initialise inventory
         inventory = new PlayerInventory();
@@ -61,5 +62,20 @@ public class Player {
         this.currentPlace = newPlace;
 
         System.out.println("New city: " + currentCity.name + ", New place: " + currentPlace.placeName);
+    }
+
+    public String ViewStats(){
+        //Declare empty string.
+        String allStat = "";
+        //Add title and HP stat.
+        allStat += "ALL STATS \r\nHitpoints: " + hitPoints + "\r\n";
+
+        //Loop through stats and add names + level to string.
+        for(int x = 0; x < skills.length; x++){
+            allStat += skillNames[x] + ": " + skills[x] + "\r\n"; 
+        }
+
+        //Return the string.
+        return allStat;
     }
 }
